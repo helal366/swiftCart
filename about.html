@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="navbar bg-base-100 shadow-sm x_padding">
@@ -58,10 +60,73 @@
         </div>
     </header>
 
-    <main>
-        about us
+    <main class="min-h-[500px] x_padding py-10">
+
+        <!-- Title -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-3">About SwiftCart</h1>
+            <p class="text-gray-500 max-w-2xl mx-auto">
+                SwiftCart is your one-stop destination for fashion, electronics,
+                and lifestyle products — delivered quickly and reliably.
+            </p>
+        </section>
+
+        <!-- About Content -->
+        <section class="grid md:grid-cols-2 gap-10 items-center mb-16">
+
+            <!-- Image -->
+            <img src="/Assets/a.png" class="rounded-lg shadow-lg w-full"
+                alt="Shopping">
+
+            <!-- Text -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+                <p class="text-gray-600 mb-4">
+                    Our mission is to make online shopping simple, fast, and
+                    enjoyable for everyone. We carefully select high-quality
+                    products and partner with trusted suppliers to ensure
+                    customer satisfaction.
+                </p>
+
+                <p class="text-gray-600">
+                    Whether you're looking for the latest gadgets, trendy
+                    fashion, or everyday essentials — SwiftCart has you covered.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="card bg-base-100 shadow-md p-6 text-center">
+                <i class="fa-solid fa-truck-fast text-3xl text-[#442dec] mb-3"></i>
+                <h3 class="font-bold text-lg mb-2">Fast Delivery</h3>
+                <p class="text-gray-500 text-sm">
+                    We deliver products quickly and safely to your doorstep.
+                </p>
+            </div>
+
+            <div class="card bg-base-100 shadow-md p-6 text-center">
+                <i class="fa-solid fa-shield-halved text-3xl text-[#442dec] mb-3"></i>
+                <h3 class="font-bold text-lg mb-2">Secure Payments</h3>
+                <p class="text-gray-500 text-sm">
+                    Your transactions are protected with industry-standard security.
+                </p>
+            </div>
+
+            <div class="card bg-base-100 shadow-md p-6 text-center">
+                <i class="fa-solid fa-headset text-3xl text-[#442dec] mb-3"></i>
+                <h3 class="font-bold text-lg mb-2">24/7 Support</h3>
+                <p class="text-gray-500 text-sm">
+                    Our support team is always ready to help you.
+                </p>
+            </div>
+
+        </section>
+
     </main>
 
     <script src="script/app.js"></script>
 </body>
+
 </html>
