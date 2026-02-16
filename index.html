@@ -28,11 +28,11 @@
                 <span class="text-xl text-[#442dec] font-semibold">SwiftCart</span>
             </div>
             <div class="navbar-center hidden lg:flex font-semibold">
-                <ul class="menu menu-horizontal px-1 li_container">
-                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1 active" href="index.html">Home</a></li>
-                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="products.html">Products</a></li>
-                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="about.html">About</a></li>
-                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="contact.html">Contact</a></li>
+                <ul class="menu menu-horizontal px-1 li_container space-x-2">
+                    <li><a class="cursor-pointer hover:text-[#442dec] active" href="index.html">Home</a></li>
+                    <li><a class="cursor-pointer hover:text-[#442dec]" href="products.html">Products</a></li>
+                    <li><a class="cursor-pointer hover:text-[#442dec]" href="about.html">About</a></li>
+                    <li><a class="cursor-pointer hover:text-[#442dec]" href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="navbar-end">
@@ -127,6 +127,13 @@
             </div>
 
         </section>
+
+        <!-- trending now -->
+         <section class="x_padding mb-10">
+            <h2 class="text-3xl font-bold py-2 mb-2">Trending now</h2>
+
+            <div id="trending_container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-2"></div>
+         </section>
     </main>
 
     <!-- footer -->
@@ -199,6 +206,7 @@
         </section>
     </footer>
     <script src="script/app.js"></script>
+    <script src="script/products.js"></script>
 </body>
 
 </html>

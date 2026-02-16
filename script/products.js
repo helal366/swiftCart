@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <span>(${product.rating.count})</span>
                             </div>
                         </div>
-                        <h3 class="font-semibold mb-2 truncate">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h3>
-                        <h2 class="font-semibold text-lg mb-2">$109.5</h2>
+                        <h3 class="font-semibold mb-2 truncate">${product.title}</h3>
+                        <h2 class="font-semibold text-lg mb-2">${product.price}</h2>
                         <div type="button" class="flex flex-wrap items-center justify-between text-sm gap-4 ">
                            
                             <button id="product_${product.id}"  class="cursor-pointer flex-1 border-2 border-gray-300 rounded py-1 px-1 text-center hover:bg-gray-200">
@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     catagoryProducts();
 
+   
     // modal show product details
     const productDetailsModal = async(id) => {
         const url=`https://fakestoreapi.com/products/${id}`;
@@ -121,6 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
     allBtn.addEventListener("click", () => {
         loadAllProducts();
     })
+
+
 })
 
 
