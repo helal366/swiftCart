@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swift Cart</title>
     <link rel="stylesheet" href="style.css">
-    <!-- tailwind+daisyui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- tailwind+daisyui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -22,22 +20,23 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
-     <header>
+    <header>
         <div class="navbar bg-base-100 shadow-sm x_padding">
             <div class="navbar-start">
                 <span class="text-xl text-[#442dec] font-semibold">SwiftCart</span>
             </div>
             <div class="navbar-center hidden lg:flex font-semibold">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a class="cursor-pointer hover:text-[#442dec]" href="index.html">Home</a></li>
-                    <li><a class="cursor-pointer hover:text-[#442dec]" href="products.html">Products</a></li>
-                    <li><a class="cursor-pointer hover:text-[#442dec]" href="about.html">About</a></li>
-                    <li><a class="cursor-pointer hover:text-[#442dec]" href="contact.html">Contact</a></li>
+                <ul class="menu menu-horizontal px-1 li_container">
+                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="index.html">Home</a></li>
+                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="products.html">Products</a></li>
+                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="about.html">About</a></li>
+                    <li><a class="cursor-pointer hover:text-[#442dec] mr-1" href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class=""><i class="fa-solid fa-cart-arrow-down"></i></i></a>
+                <a class=""><i class="fa-solid fa-cart-arrow-down"></i></a>
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -47,7 +46,7 @@
                         </svg>
                     </div>
                     <ul tabindex="-1"
-                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow li_container">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="about.html">About</a></li>
@@ -58,8 +57,27 @@
         </div>
     </header>
 
-    <main class="bg-gray-100 h-[500px] ">
-        All products
+    <main class="min-h-[500px] pb-10 x_padding">
+        <h2 class=" py-5 md:py-8 text-center font-bold text-3xl ">Our Products</h2>
+        <div id="catagory_container" class="flex gap-5 flex-wrap justify-center text-[9px] mb-10">
+            <div id="all_products" 
+                class="btn rounded-full border-2 border-gray-300 bg-white hover:bg-[#442dec] hover:text-white text-gray-500 active2">
+                All</div>
+            <div id="electronics_products"
+                class="btn rounded-full border-2 border-gray-300 bg-white hover:bg-[#442dec] hover:text-white text-gray-500">
+                Electronics</div>
+            <div
+                class="btn rounded-full border-2 border-gray-300 bg-white hover:bg-[#442dec] hover:text-white text-gray-500">
+                Jewelery</div>
+            <div
+                class="btn rounded-full border-2 border-gray-300 bg-white hover:bg-[#442dec] hover:text-white text-gray-500">
+                Men's Clothing</div>
+            <div
+                class="btn rounded-full border-2 border-gray-300 bg-white hover:bg-[#442dec] hover:text-white text-gray-500">
+                Women's Clothing</div>
+        </div>
+        <div id="card_container" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        </div>
     </main>
 
     <!-- footer -->
@@ -75,10 +93,10 @@
             <nav>
                 <h6 class="footer-title text-gray-200">QUICK LINKS</h6>
                 <ul class="text-white">
-                    <li class="link link-hover">Home</li>
-                    <li class="link link-hover">Products</li>
-                    <li class="link link-hover">About</li>
-                    <li class="link link-hover">Contact</li>
+                    <li><a href="index.html" class="link link-hover">Home</a></li>
+                    <li><a href="products.html" class="link link-hover">Products</a></li>
+                    <li><a href="about.html" class="link link-hover">About</a></li>
+                    <li><a href="contact.html" class="link link-hover">Contact</a></li>
                 </ul>
             </nav>
             <nav>
@@ -106,30 +124,34 @@
                 </fieldset>
             </form>
         </section>
-        <hr class="bordet-t border-gray-600 w-full my-5" />
+        <hr class="border-t border-gray-600 w-full my-5" />
         <section class="flex flex-col-reverse md:flex-row md:justify-between text-neutral-content ">
             <aside class="mb-5 md:mb-0">
                 <p>© 2025, SwiftCart, Inc. All rights reserved</p>
             </aside>
             <nav class="flex gap-4 justify-start md:justify-end mb-5 md:mb-0">
                 <a>
-                     <i class="fa-brands fa-facebook-f text-2xl"></i>
+                    <i class="fa-brands fa-facebook-f text-2xl"></i>
                 </a>
                 <a>
-                   <i class="fa-brands fa-twitter text-2xl"></i>
+                    <i class="fa-brands fa-twitter text-2xl"></i>
                 </a>
-                <a> 
+                <a>
                     <i class="fa-brands fa-instagram text-2xl"></i>
                 </a>
-                <a> 
+                <a>
                     <i class="fa-brands fa-linkedin-in text-2xl"></i>
                 </a>
-                <a> 
+                <a>
                     <i class="fa-regular fa-envelope text-2xl"></i>
                 </a>
-                
+
             </nav>
         </section>
     </footer>
+
+    <!-- javascript file attached -->
+    <script src="./script/app.js"></script>
+    <script src="./script/products.js"></script>
 </body>
 </html>
