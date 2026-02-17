@@ -78,11 +78,53 @@ This will return a promise like: Promise { <pending> } and we will never get the
         test()
 
 This will give us javascript data by executing some sequencial ways. The ways are:
-1️⃣ Send request
-2️⃣ Wait for response
-3️⃣ Convert to JSON
-4️⃣ Use data
+1️. Send request
+2️. Wait for response
+3️. Convert to JSON
+4️. Use data
 
 ```
 
 # 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
+### In JavaScript, scope determines where a variable or function is accessible in our code. It defines the visibility and lifetime of variables.
+```
+    There are three types of scope: Global scope, Function scope, Block scope.
+```
+#### Global Scope: Variables which are declared outside any function or block have global scope. They are accessible anywhere in the code, including inside functions and block.
+```
+    let name = "Faisal"; // global
+
+    function greet() {
+      console.log("Hello " + name); // can access global variable
+    }
+
+    greet();                // Hello Faisal
+    console.log(name);      // Faisal
+
+```
+#### Function Scope: Variables which are declared inside a function are only accessible within that function. They cannot be accessed outside the function. var is function-scoped.
+```
+    function add(a, b) {
+        let sum = a + b;            // function scope
+        console.log(sum);           // accessible here
+    }
+
+add(2, 3);                     // 5
+console.log(sum);              // Error: sum is not defined
+
+```
+
+#### Block scope: Variables declared with let or const inside curly braces {} are block-scoped. Variables declared with let or const inside curly braces {} are block-scoped.
+```
+    if (true) {
+        let a = "I exist only inside this block";
+        const b = 100;
+        var c = "I am var";
+    }
+
+console.log(a); // Error
+console.log(b); // Error
+console.log(c); // Works (var is not block-scoped)
+
+```
+
