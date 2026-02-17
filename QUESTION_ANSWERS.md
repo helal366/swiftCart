@@ -61,5 +61,28 @@ console.log(nums) /// [1,2,3,4,5]
     console.log(null===undefined); // false
  ```
 # 4) What is the significance of `async`/`await` in fetching API data?
+### async/await: The main function of async/await is o handle asynchronous operations like API calls, timers, file loading in a simple, readable way.
+
+```
+    Suppose, we are going to fetch an url.
+    const res=fetch(url); 
+    console.log(res);   
+This will return a promise like: Promise { <pending> } and we will never get the data.
+
+    On the other hand, 
+        async function test() {
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log(data); 
+        }
+        test()
+
+This will give us javascript data by executing some sequencial ways. The ways are:
+1️⃣ Send request
+2️⃣ Wait for response
+3️⃣ Convert to JSON
+4️⃣ Use data
+
+```
 
 # 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
