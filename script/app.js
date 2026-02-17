@@ -64,25 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
     const productDetailsModal = (product) => {
-        
+        const cat=product.category;
+        const catName=cat.charAt(0).toUpperCase()+cat.slice(1);
         const modalContent=document.getElementById("modal_content");
         modalContent.innerHTML="";
         modalContent.innerHTML=`
             <div class="flex flex-col border-4 border-gray-300 rounded-md shadow p-5">
-                    <img class="w-full p-2 max-h-72 bg-gray-200 shadow-md rounded-t-md" src=${product.image} alt=${product.category}>
+                    <img class="w-full p-2 max-h-72 bg-gray-200 shadow-md shadow-white rounded-t-md" src=${product.image} alt=${product.category}>
 
                     <div class="bg-gray-600 text-white p-5 space-y-3 rounded-b-md text-xs border-t-2 border-white">
                         <h3 class="font-semibold text-base">${product.title}</h3>
+                        <hr class="w-full border-t-2 border-gray-100 ">
+                        
                         <p class="">
                             ${product.description}
                         </p>
                         <div>
-                            <p class="mb-2">${product.category}</p>
+                            <p class="mb-2 font-semibold">${catName}</p>
                             <div>
                                 <p><span class="text-bold">Price: </span> $${product.price} </p> 
                                 <p><span class="text-bold">In stock: </span> ${product.rating.count}</p>
                                 <p><span class="text-bold">Rate: </span> ${product.rating.rate}</p>
                             </div>
+                        </div>
+                        <div class="flex justify-between bg-gray-100 py-5 px-5 rounded shadow-lg shadow-[#3992a5]">
+                            <button class="btn btn-outline btn-primary">Buy now</button>
+                            <button class="btn btn-outline btn-primary">Add to Cart</button>
                         </div>
                     </div>
                 </div>
