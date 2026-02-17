@@ -13,23 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
             clickedLi.classList.add("active");
         })
     })
-    const currentPage=window.location.pathname.split("/").pop();
-    allLI.forEach(li=>{
-        const link=li.querySelector("a");
-        if(link && link.getAttribute("href")===currentPage){
-            li.classList.add("active");
-        }
-    })
-
+    
     const trendingCards=async()=>{
-        const ids=[1,2,3];
+         const url = "https://fakestoreapi.com/products";
+        const res = await fetch(url);
+        const products = await res.json();
+        const newProducts=products.map(p=>({...p}));
+        const topTrending3=newProducts.sort((a,b)=>b.rating.rate- a.rating.rate).slice(0,3);
         const trendContainer=document.getElementById("trending_container");
-        trendContainer.innerHTML="";
-        for(let id of ids){
-            const url=`https://fakestoreapi.com/products/${id}`;
-            const res=await fetch(url);
-            const product=await res.json();
-            console.log(product)
+        console.log(topTrending3);
+        console.log(trendContainer);
+        topTrending3.forEach(product=>{
             const card=document.createElement("div");
             card.className = "card bg-base-100 shadow-sm border-2 border-gray-200";
             card.innerHTML=`
@@ -66,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
             detailsBtn.addEventListener("click", ()=>{
                 productDetailsModal(product);
             })
-        }
+        })
+
     }
     const productDetailsModal = (product) => {
         
@@ -97,4 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
         detailsModal.showModal();
     }
     trendingCards();
+
+    const currentPage=window.location.pathname.split("/").pop() || 'index.html';
+    allLI.forEach(li=>{
+        const link=li.querySelector("a");
+        if(link && link.getAttribute("href")===currentPage){
+            li.classList.add("active");
+        }
+    })
+
 })
